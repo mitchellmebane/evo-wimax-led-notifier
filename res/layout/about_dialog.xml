@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:padding="5.0dip" 
+    android:layout_width="fill_parent" 
+    android:layout_height="fill_parent" >
+    
+    <LinearLayout android:id="@+id/rlAboutContainer" 
+        android:orientation="vertical" 
+        android:scrollbars="horizontal" 
+        android:layout_width="wrap_content" 
+        android:layout_height="wrap_content" 
+        android:isScrollContainer="true" >
+    
+        <LinearLayout android:id="@+id/llTitle" 
+            android:layout_gravity="center_horizontal" 
+            android:orientation="horizontal" 
+            android:layout_width="wrap_content" 
+            android:layout_height="wrap_content" 
+            android:layout_weight="1.0" >
+            
+            <ImageView android:id="@+id/ivAppIcon" 
+                android:layout_gravity="center_vertical" 
+                android:layout_width="48.0px" 
+                android:layout_height="48.0px" 
+                android:src="@drawable/icon" />
+                
+            <TextView android:id="@+id/tvAppName" 
+                android:textSize="35.0dip" 
+                android:layout_gravity="center_vertical"
+                android:layout_width="wrap_content" 
+                android:layout_height="wrap_content" 
+                android:layout_marginLeft="5.0dip" 
+                android:text="@string/appName" />
+            
+        </LinearLayout>
+        
+        <TextView android:id="@+id/tvAppVersion" 
+            android:textSize="25.0dip" 
+            android:layout_gravity="center_horizontal" 
+            android:layout_width="wrap_content" 
+            android:layout_height="wrap_content" 
+            android:layout_weight="1.0" />
+            
+        <TextView android:id="@+id/tvAppAuthor" 
+            android:textSize="20.0dip" 
+            android:layout_gravity="center_horizontal" 
+            android:layout_width="wrap_content" 
+            android:layout_height="wrap_content" 
+            android:layout_weight="1.0" />
+            
+        <!--
+        <TextView android:id="@+id/tvAppURL" 
+            android:textSize="14.5dip" 
+            android:autoLink="web" 
+            android:layout_gravity="center_horizontal" 
+            android:layout_width="wrap_content" 
+            android:layout_height="wrap_content" 
+            android:layout_marginTop="5.0dip" 
+            android:text="@string/appURL" 
+            android:layout_weight="1.0" />
+         -->
+        
+        <Button android:id="@+id/btnDonate" 
+            android:layout_gravity="center_horizontal" 
+            android:background="@drawable/donate" 
+            android:layout_width="wrap_content" 
+            android:layout_height="wrap_content" 
+            android:layout_marginTop="10.0dip" 
+            android:height="39.0px" 
+            android:width="138.0px" 
+            android:layout_weight="1.0" />
+        
+        <TextView android:id="@+id/tvPleaseDonate" 
+            android:layout_gravity="center_horizontal" 
+            android:layout_width="wrap_content" 
+            android:layout_height="wrap_content" 
+            android:layout_marginTop="5.0dip" 
+            android:text="@string/strPleaseDonate" 
+            android:layout_weight="1.0" />
+            
+        <TextView android:id="@+id/tvProblems" 
+            android:layout_gravity="center_horizontal" 
+            android:layout_width="fill_parent" 
+            android:layout_height="wrap_content" 
+            android:layout_marginTop="15.0dip" 
+            android:layout_weight="1.0" />
+            
+        <TextView android:id="@+id/tvSpecialThanks" 
+            android:layout_gravity="center_horizontal" 
+            android:layout_width="wrap_content" 
+            android:layout_height="wrap_content" 
+            android:layout_marginTop="5.0dip" 
+            android:layout_weight="1.0" />
+            
+        <TextView android:id="@+id/tvCopyright" 
+            android:textSize="15.0dip" 
+            android:gravity="center" 
+            android:layout_gravity="center_horizontal" 
+            android:layout_width="wrap_content" 
+            android:layout_height="wrap_content" 
+            android:layout_marginTop="20.0dip" 
+            android:text="@string/strCopyright" 
+            android:layout_weight="1.0" />
+    </LinearLayout>
+    
+</ScrollView>
