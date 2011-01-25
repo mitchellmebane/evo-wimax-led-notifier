@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical"
+	android:gravity="center"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent" >
+	
+	<Button android:id="@+id/notificationSettingsButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="Notification Settings"
+        android:onClick="showNotificationPreferences" />
+        
+    <Button android:id="@+id/legendButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="Legend"
+        android:onClick="showLegend" />
+	  
+    <Button android:id="@+id/resetLEDButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="Reset LED"
+        android:onClick="resetLED" />
+    
+    <Button android:id="@+id/queryLEDButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="Query LED State"
+        android:onClick="queryLEDState" />
+        
+    <Button android:id="@+id/showAboutButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="About This App"
+        android:onClick="showAboutDialog" />
+  
+</LinearLayout>
