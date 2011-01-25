@@ -15,6 +15,10 @@ public class Misc {
         }
     }
     
+    /**
+     * Flushes and closes an {@link OutputStream}, ignoring any exceptions which may arise during the process
+     * @param os The {@link OutputStream} to flush and close
+     */
     public static void closeOrLikeWhatever( OutputStream os ) {
         if( os != null ) {
             try {
