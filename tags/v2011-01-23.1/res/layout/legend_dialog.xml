@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android" 
+    android:id="@+id/tlLegend" 
+    android:background="@drawable/white" 
+    android:padding="10.0px" 
+    android:layout_width="fill_parent" 
+    android:layout_height="fill_parent" 
+    android:shrinkColumns="2" >
+    
+    <TableRow android:id="@+id/TableRow01" 
+        android:layout_width="wrap_content" 
+        android:layout_height="wrap_content" >
+        
+        <TextView android:id="@+id/tvLegendGreenRapid" 
+            android:textColor="@drawable/darkGreen" 
+            android:layout_width="wrap_content" 
+            android:layout_height="wrap_content" 
+            android:layout_span="2" 
+            android:text="Green Rapid" />
+        <TextView android:id="@+id/tvLegendGreenRapidDesc" 
+            android:textColor="@drawable/black" 
+            android:layout_width="wrap_content" 
+            android:layout_height="wrap_content"
+            android:layout_gravity="right" 
+            android:paddingLeft="40.0px" 
+            android:text="Blinks the LED in three rapid green flashes at once" />
+    
+    </TableRow>
+    
+    <TableRow android:id="@+id/TableRow02" 
+        android:layout_width="wrap_content" 
+        android:layout_height="wrap_content" 
+        android:layout_marginTop="10.0px" >
+    
+        <TextView android:id="@+id/tvLegendGreenSlow" 
+            android:textColor="@drawable/darkGreen" 
+            android:layout_width="wrap_content" 
+            android:layout_height="wrap_content" 
+            android:layout_span="2" 
+            android:text="Green Slow" />
+        <TextView android:id="@+id/tvLegendGreenSlowDesc" 
+            android:textColor="@drawable/black" 
+            android:layout_width="wrap_content" 
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"  
+            android:paddingLeft="40.0px" 
+            android:text="Blinks the LED in a rapid green flash occasionally" />
+        
+    </TableRow>
+    
+    <TableRow android:id="@+id/TableRow03" 
+        android:layout_width="wrap_content" 
+        android:layout_height="wrap_content" 
+        android:layout_marginTop="10.0px" >
+        
+        <TextView android:id="@+id/LegendLEDGreenGlow" 
+            android:textColor="@drawable/darkGreen" 
+            android:layout_width="wrap_content" 
+            android:layout_height="wrap_content" 
+            android:layout_span="2" 
+            android:text="Green Glow" />
+        <TextView android:id="@+id/LegendLEDGreenGlowDesc" 
+            android:textColor="@drawable/black" 
+            android:paddingLeft="40.0px" 
+            android:layout_width="wrap_content" 
+            android:layout_height="wrap_content" 
+            android:text="LED will occasionally glow a solid green" />
+            
+    </TableRow>
+    
+    <TableRow android:id="@+id/TableRow04" 
+        android:layout_width="wrap_content" 
+        android:layout_height="wrap_content" 
+        android:layout_marginTop="10.0px" >
+        
+        <TextView android:id="@+id/TextView01" 
+            android:textColor="@drawable/darkGreen" 
+            android:layout_width="wrap_content" 
+            android:layout_height="wrap_content" 
+            android:text="Green\u0020" />
+        <TextView android:id="@+id/TextView02" 
+            android:textColor="@drawable/red" 
+            android:clickable="false" 
+            android:layout_width="wrap_content" 
+            android:layout_height="wrap_content" 
+            android:text="&amp; Red Alternate" />
+        <TextView android:id="@+id/TextView03" 
+            android:textColor="@drawable/black" 
+            android:gravity="left" 
+            android:paddingLeft="40.0px" 
+            android:layout_width="wrap_content" 
+            android:layout_height="wrap_content" 
+            android:text="LED will flash back and forth between red and green" />
+            
+    </TableRow>
+    
+    <TableRow android:id="@+id/TableRow05" 
+        android:layout_width="wrap_content" 
+        android:layout_height="wrap_content" 
+        android:layout_marginTop="10.0px" >
+        
+        <TextView android:id="@+id/TextView04" 
+            android:textColor="@drawable/orange" 
+            android:layout_width="wrap_content" 
+            android:layout_height="wrap_content" 
+            android:layout_span="2" 
+            android:text="Orange Glow" />
+        <TextView android:id="@+id/TextView05" 
+            android:textColor="@drawable/black" 
+            android:paddingLeft="40.0px" 
+            android:layout_width="wrap_content" 
+            android:layout_height="wrap_content" 
+            android:text="LED will occasionally glow a solid orange" />
+        
+    </TableRow>
+    
+</TableLayout>
