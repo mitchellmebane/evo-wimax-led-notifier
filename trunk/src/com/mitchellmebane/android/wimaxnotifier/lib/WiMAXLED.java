@@ -119,11 +119,11 @@ public class WiMAXLED {
             }
         }
         catch( Exception e ) {
-            Log.i( TAG, "Error while trying to get root", e );
+            Log.e( TAG, "Error while trying to get root", e );
         }
         
         if( !gotRoot ) {
-            Log.i( TAG, "Unable to get root :(" );
+            Log.w( TAG, "Unable to get root :(" );
         }
         
         return gotRoot;
