@@ -12,7 +12,6 @@ import android.widget.Toast;
 import com.mitchellmebane.android.wimaxnotifier.WiMAXNotifierMessageService.MessageType;
 import com.mitchellmebane.android.wimaxnotifier.exceptions.InvalidBroadcastException;
 import com.mitchellmebane.android.wimaxnotifier.lib.StackTrace;
-import com.mitchellmebane.android.wimaxnotifier.utils.Misc;
 
 public class MessageBroadcastReceiver extends BroadcastReceiver {
      // private static final String TAG = BroadcastReceiver.class.getSimpleName();
@@ -20,10 +19,9 @@ public class MessageBroadcastReceiver extends BroadcastReceiver {
     
     @Override
     public void onReceive( Context context, Intent intent ) {
-        Misc.logIntent( intent );
         try {
             // if we got a text message or an MMS, show the notification
-            if( (isSMS( intent ) && !isVoicemail( intent )) || isMMS( intent ) ) {
+            if( isSMS( intent ) || isMMS( intent ) ) {
                 showMessageNotification( context, intent );
             }
             // if we had a connectivity changed event, see if we need to change the 4G status (not yet implemented) 
@@ -51,7 +49,8 @@ public class MessageBroadcastReceiver extends BroadcastReceiver {
      *         <code>false</code> otherwise
      */
     private static boolean isSMS( Intent i ) {
-        return "android.provider.Telephony.SMS_RECEIVED".equals( i.getAction() );
+        boolean isSMS = "android.provider.Telephony.SMS_RECEIVED".equals( i.getAction() );
+        return isSMS && !isSprintSpecialNotification( i );
     }
     
     /**
@@ -67,27 +66,21 @@ public class MessageBroadcastReceiver extends BroadcastReceiver {
     }
     
     /**
-     * Determines whether a given notification is a voicemail-related SMS
+     * Determines whether this SMS is a "special" Sprint notification.<br>
+     * Sprint sends system notifications from address 9016. Sense filters them
+     * out, and so should we.
      * 
-     * @param i The intent originally delivered to onReceive
-     * @return <code>True</code> if this SMS is a voicemail notification, <code>false</code> otherwise
+     * @param i
+     *            The intent originally delivered to onReceive
+     * @return <code>True</code> if this SMS is a Sprint notification,
+     *         <code>false</code> otherwise
      */
-    private static boolean isVoicemail( Intent i ) {
-        boolean isSmsAction = "android.provider.Telephony.SMS_RECEIVED".equals( i.getAction() );
-        
+    private static boolean isSprintSpecialNotification( Intent i ) {
         Object[] pdus = (Object[]) i.getExtras().get( "pdus" );
         byte[] pdu = (byte[]) pdus[0];
         SmsMessage sms = SmsMessage.createFromPdu( pdu );
         
-        // only the clear one seems to be true for new voicemail notifications
-        // who knows when the others get used, but let's ignore them anyway
-        boolean isVoicemailNotification = 
-            sms.isCphsMwiMessage() ||
-            sms.isMWIClearMessage() || // incoming message
-            sms.isMWISetMessage() || 
-            sms.isMwiDontStore();
-        
-        return isSmsAction && isVoicemailNotification;
+        return "9016".equals( sms.getOriginatingAddress() );
     }
 
     private void showMessageNotification( Context context, Intent intent ) {
