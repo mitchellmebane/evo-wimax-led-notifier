@@ -37,9 +37,15 @@ public class HomeActivity extends Activity {
     }
     
     public void resetLED( View v ) {
-        Log.i( "WiMAX Message Notifier", "Resetting WiMAX LED..." );
+        Log.i( "WiMAX Message Notifier", "Resetting WiMAX LED and stopping service..." );
         try {
+            // turn off the LED
             WiMAXLED.turnOff();
+            
+            // kill the service if it is running
+            Intent serviceIntent = new Intent( this.getApplicationContext(), WiMAXNotifierMessageService.class );
+            stopService( serviceIntent );
+            
             Toast.makeText( this, "WiMAX LED Reset", Toast.LENGTH_SHORT ).show();
         }
         catch( Exception e ) {
