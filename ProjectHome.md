@@ -1,0 +1,1 @@
+Use the hidden WiMAX Notification LED, located near the power button on the HTC Evo 4G, for incoming message notifications.
